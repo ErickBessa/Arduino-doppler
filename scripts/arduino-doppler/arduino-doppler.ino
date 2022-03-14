@@ -2,6 +2,7 @@
 
 const int addr = 0;
 const int pinRele = 2;
+const int pinButton = 12;
 
 byte velMax;
 long velocidade;
@@ -14,9 +15,8 @@ void setup() {
   while (!Serial);
 
   pinMode(pinRele, OUTPUT);
-  digitalWrite(pinRele, HIGH);
-  delay(500);
-  digitalWrite(pinRele, LOW);
+
+  pinMode(pinButton, INPUT);  
 
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
@@ -29,6 +29,14 @@ void setup() {
 }
 
 void loop() {
+
+  if (digitalRead(pinButton) == HIGH)
+  {
+    digitalWrite(pinRele, HIGH);
+    delay(1000);
+    digitalWrite(pinRele, LOW);
+    return;
+  }
 
   if (Serial.available() > 0)
   {
@@ -79,7 +87,7 @@ void loop() {
             Serial.println("DPP*SEN*" + String(receiveData));
           else
             Serial.println("DPP*SEN*" + String(velocidade));
-          
+
           bCmdDoppler = false;
           return;
         }
@@ -112,8 +120,8 @@ void loop() {
     }
   }
 
-  delay(250);
+  delay(50);
   digitalWrite(13, HIGH);
-  delay(250);
+  delay(50);
   digitalWrite(13, LOW);
 }
