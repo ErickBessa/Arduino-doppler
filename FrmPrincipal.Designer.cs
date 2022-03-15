@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.btnOpenSerial = new System.Windows.Forms.Button();
             this.gpInfo = new System.Windows.Forms.GroupBox();
             this.txtLog = new System.Windows.Forms.TextBox();
@@ -36,17 +37,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxPorts = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nVelMax = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSendCmd = new System.Windows.Forms.Button();
-            this.nVelMax = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGetSensibilidade = new System.Windows.Forms.Button();
             this.nSensibilidadeDpp = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEnviaSensibilidadeDpp = new System.Windows.Forms.Button();
-            this.btnGetSensibilidade = new System.Windows.Forms.Button();
             this.gpInfo.SuspendLayout();
             this.gpSerial.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -141,33 +142,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comando Arduino";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 43);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Velocidade Máxima:";
-            // 
-            // btnSendCmd
-            // 
-            this.btnSendCmd.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSendCmd.Enabled = false;
-            this.btnSendCmd.FlatAppearance.BorderSize = 0;
-            this.btnSendCmd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnSendCmd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendCmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendCmd.Location = new System.Drawing.Point(20, 106);
-            this.btnSendCmd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSendCmd.Name = "btnSendCmd";
-            this.btnSendCmd.Size = new System.Drawing.Size(146, 64);
-            this.btnSendCmd.TabIndex = 2;
-            this.btnSendCmd.Text = "Envia Velocidade";
-            this.btnSendCmd.UseVisualStyleBackColor = false;
-            this.btnSendCmd.Click += new System.EventHandler(this.btnSendCmd_Click);
-            // 
             // nVelMax
             // 
             this.nVelMax.Increment = new decimal(new int[] {
@@ -194,6 +168,33 @@
             0,
             0,
             0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 43);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Velocidade Máxima:";
+            // 
+            // btnSendCmd
+            // 
+            this.btnSendCmd.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSendCmd.Enabled = false;
+            this.btnSendCmd.FlatAppearance.BorderSize = 0;
+            this.btnSendCmd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSendCmd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendCmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendCmd.Location = new System.Drawing.Point(20, 106);
+            this.btnSendCmd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSendCmd.Name = "btnSendCmd";
+            this.btnSendCmd.Size = new System.Drawing.Size(146, 64);
+            this.btnSendCmd.TabIndex = 2;
+            this.btnSendCmd.Text = "Envia Velocidade";
+            this.btnSendCmd.UseVisualStyleBackColor = false;
+            this.btnSendCmd.Click += new System.EventHandler(this.btnSendCmd_Click);
             // 
             // statusStrip1
             // 
@@ -228,6 +229,23 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Comando Doppler";
+            // 
+            // btnGetSensibilidade
+            // 
+            this.btnGetSensibilidade.BackColor = System.Drawing.Color.DarkGray;
+            this.btnGetSensibilidade.Enabled = false;
+            this.btnGetSensibilidade.FlatAppearance.BorderSize = 0;
+            this.btnGetSensibilidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnGetSensibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetSensibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetSensibilidade.Location = new System.Drawing.Point(20, 144);
+            this.btnGetSensibilidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGetSensibilidade.Name = "btnGetSensibilidade";
+            this.btnGetSensibilidade.Size = new System.Drawing.Size(146, 50);
+            this.btnGetSensibilidade.TabIndex = 6;
+            this.btnGetSensibilidade.Text = "Checa Sensibilidade";
+            this.btnGetSensibilidade.UseVisualStyleBackColor = false;
+            this.btnGetSensibilidade.Click += new System.EventHandler(this.btnGetSensibilidade_Click);
             // 
             // nSensibilidadeDpp
             // 
@@ -283,23 +301,6 @@
             this.btnEnviaSensibilidadeDpp.UseVisualStyleBackColor = false;
             this.btnEnviaSensibilidadeDpp.Click += new System.EventHandler(this.btnEnviaSensibilidadeDpp_Click);
             // 
-            // btnGetSensibilidade
-            // 
-            this.btnGetSensibilidade.BackColor = System.Drawing.Color.DarkGray;
-            this.btnGetSensibilidade.Enabled = false;
-            this.btnGetSensibilidade.FlatAppearance.BorderSize = 0;
-            this.btnGetSensibilidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnGetSensibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetSensibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetSensibilidade.Location = new System.Drawing.Point(20, 144);
-            this.btnGetSensibilidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnGetSensibilidade.Name = "btnGetSensibilidade";
-            this.btnGetSensibilidade.Size = new System.Drawing.Size(146, 50);
-            this.btnGetSensibilidade.TabIndex = 6;
-            this.btnGetSensibilidade.Text = "Checa Sensibilidade";
-            this.btnGetSensibilidade.UseVisualStyleBackColor = false;
-            this.btnGetSensibilidade.Click += new System.EventHandler(this.btnGetSensibilidade_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -311,7 +312,9 @@
             this.Controls.Add(this.gpSerial);
             this.Controls.Add(this.gpInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(616, 522);
             this.MinimumSize = new System.Drawing.Size(616, 522);
             this.Name = "FrmPrincipal";
